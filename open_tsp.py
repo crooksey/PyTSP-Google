@@ -23,9 +23,9 @@ route_json = json.dumps(r.json(), indent=2)
 # load into a python data structure
 data = json.loads(route_json)
 
-print "Total Distance " + str(d2['route']['distance']) + ' miles'
-print "Total Fuel Used " + str(d2['route']['fuelUsed']) + ' litres'
-print "Total Time " +  str(d2['route']['formattedTime'])
+print "Total Distance " + str(data['route']['distance']) + ' miles'
+print "Total Fuel Used " + str(data['route']['fuelUsed']) + ' litres'
+print "Total Time " +  str(data['route']['formattedTime'])
 
 
 
