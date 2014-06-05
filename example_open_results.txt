@@ -1,0 +1,24 @@
+luke@xbu64:~/python$ python open_tsp.py 
+>------------<
+Original Route
+>------------<
+51.524410145
+51.5449591514
+51.5206184283
+51.5285060966
+Total Distance 8.482 miles
+Total Fuel Used 0.52 litres
+Total Time 00:25:13
+Map http://open.mapquestapi.com/staticmap/v4/getmap?key=YOURKEY&bestfit=51.547508,-0.201385,51.519817,-0.127893&shape=51.524410145,-0.129892736523,51.5449591514,-0.165188854492,51.5206184283,-0.149547964184,51.5285060966,-0.201705257078&size=600,600&type=map&imagetype=jpeg
+
+>-------------<
+Optimised Route
+>-------------<
+{'latLng': {'lat': 51.524410144966154, 'lng': -0.12989273652335526}}
+{'latLng': {'lat': 51.52061842826141, 'lng': -0.1495479641837033}}
+{'latLng': {'lat': 51.54495915136182, 'lng': -0.16518885449221493}}
+{'latLng': {'lat': 51.52850609658769, 'lng': -0.20170525707760403}}
+Total Distance 7.116 miles
+Total Fuel Used 0.43 litres
+Total Time 00:21:37
+Map http://open.mapquestapi.com/staticmap/v4/getmap?key=YOURKEY&bestfit=51.547508,-0.201385,51.519962,-0.130076&shape=51.524410145,-0.129892736523,51.5206184283,-0.149547964184,51.5449591514,-0.165188854492,51.5285060966,-0.201705257078&size=600,600&type=map&imagetype=jpeg
