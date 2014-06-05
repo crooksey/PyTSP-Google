@@ -34,30 +34,20 @@ map_placeholder = "http://open.mapquestapi.com/staticmap/v4/getmap?key={my_app_k
 def get_bounding_box(data):
 	# load the bounding box data which forms the edges
 	# of the static map we will be using
-	lat1 = data['ul']['lat']
-	long1 = data['ul']['lng']
-	lat2 = data['lr']['lat']
-	long2 = data['lr']['lng']
 	bestfit = "{lat1},{long1},{lat2},{long2}"
-	bestfit_clean = bestfit.format(lat1=lat1, long1=long1,
-		lat2=lat2, long2=long2)
+	bestfit_clean = bestfit.format(lat1=data['ul']['lat'], 
+		long1=data['ul']['lng'], lat2=data['lr']['lat'], 
+		long2=data['lr']['lng'])
 	# now return the clean variable for use in the static map url
 	return bestfit_clean
 
 def get_shape(data):
-	# load in the location points of our journey, we can link
-	# them to the original dict to get the points
-	# define an empty var to load in each pair of co-ordinates
 	seq = ""
-	for x in data['locationSequence']:
-		lat = str(route['locations'][int(x)]['latLng']['lat'])
-		lng = str(route['locations'][int(x)]['latLng']['lng'])
-		latLng = lat + ',' + lng + ','
+	for x in data['locations']:
+		latLng = str(x['displayLatLng']['lat']) + ',' + str(x['displayLatLng']['lng']) + ','
 		seq = seq + latLng
-	# remove last trailing comma, cleanest way without
-	# having to many clauses in the loop
+	# remove last trailing comma
 	shape_clean = seq[:-1]
-	# now return the clean variable for use in the static map url
 	return shape_clean
 
 # run data through the functions
